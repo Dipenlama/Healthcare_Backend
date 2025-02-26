@@ -1,12 +1,16 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize('Healthcare_System_db', 'postgres', 'admin123',{
+require('dotenv').config
 
-    host: 'localhost',
+
+const sequelize = new Sequelize('Healthcare_system_db', 'postgres', 'admin123',{
+
+    host: process.env.HOST,
     dialect: 'postgres',
     port: 5432,
     logging: false,
 });
+
 
 async function testConnection() {
     try{
